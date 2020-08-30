@@ -24,28 +24,28 @@ import OleFileIO_PL
 
 i = ""
 
-print "Unbup v3.1 by J. Meyer 2020\n"
+print("Unbup v3.1 by J. Meyer 2020\n")
 
 try:
     i = sys.argv[1]
 except:
-    print "Command format is \"unbup_v3.exe filename.bup\""
+    print("Command format is \"unbup_v3.exe filename.bup\"")
 
 
 def unbup(i):
     try:
         bup = OleFileIO_PL.OleFileIO(i)
     except:
-        print "ERROR: Unable to open file or file does not exist"
+        print("ERROR: Unable to open file or file does not exist")
         return
 
     dir_name = i.rstrip('.bup')
     
     try:
-        print "Creating directory:", dir_name
+        print("Creating directory:", dir_name)
         os.makedirs(dir_name)
     except OSError:
-        print "ERROR: Unable to create directory.  Directory might already exist or permissions are denied."
+        print("ERROR: Unable to create directory.  Directory might already exist or permissions are denied.")
         return
     os.chdir(dir_name)
 
@@ -67,7 +67,7 @@ def unbup(i):
     d.write(detailsDecrypt)
     d.close()
 
-    print "Extracted file: details.txt"
+    print("Extracted file: details.txt")
 
     # trim filename
     filenameStart = detailsDecrypt.find("OriginalName=")
@@ -80,7 +80,7 @@ def unbup(i):
     o.write(file_0Decrypt)
     o.close()
 
-    print "Extracted file:", filename
+    print("Extracted file:", filename)
 
 if (i!=""):
     unbup(i)
