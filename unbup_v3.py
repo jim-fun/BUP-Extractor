@@ -1,8 +1,8 @@
 #!/usr/bin/python
-# UnBUP version v3
+# UnBUP version v3.1
 """
     UnBUP Extracts Malware and Info from McAfee Quarantine File (BUP)
-    Copyright (C) 2012 J. Meyer
+    Copyright (C) 2020 J. Meyer
     
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ import OleFileIO_PL
 
 i = ""
 
-print "Unbup v3 by J. Meyer 2012\n"
+print "Unbup v3.1 by J. Meyer 2020\n"
 
 try:
     i = sys.argv[1]
